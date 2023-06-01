@@ -20,3 +20,5 @@ jobs:
       run: cargo build --verbose
     - name: Run tests
       run: cargo test --verbose
+    - name: run cargo mirai
+      uses: f0rki/cargo-mirai-action@main
