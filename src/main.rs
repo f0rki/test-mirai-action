@@ -1,5 +1,8 @@
 use std::fs;
 
+mod foo;
+pub mod unsafe_resize;
+
 fn file_thingy() {
     let file_path = "./whatever";
     println!("In file {}", file_path);
@@ -36,4 +39,12 @@ fn env_var_thingy() {
 fn main() {
     env_var_thingy();
     file_thingy();
+
+    foo::bar(10);
+    // foo::bar(usize::MAX - 5);
+
+    match unsafe_resize::do_the_resize() {
+        Ok(_) => {}
+        Err(e) => println!("do the resize: {:?}", e),
+    }
 }
