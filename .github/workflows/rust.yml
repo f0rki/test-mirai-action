@@ -22,3 +22,8 @@ jobs:
       run: cargo test --verbose
     - name: run cargo mirai
       uses: f0rki/cargo-mirai-action@main
+      with:
+        mirai_log_level: info
+        mirai_diag_level: paranoid
+      env:
+        RUSTFLAGS: -Dwarnings
